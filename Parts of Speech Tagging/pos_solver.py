@@ -3,7 +3,6 @@ import numpy as np
 
 class Solver:
     # Calculate the log of the posterior probability of a given sentence
-    #  with a given part-of-speech labeling. Right now just returns -999 -- fix this!
     def __init__(self):
         self.transition_dict = {}
         self.tag_to_word_dict = {}
