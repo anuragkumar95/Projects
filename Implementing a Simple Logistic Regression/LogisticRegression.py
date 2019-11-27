@@ -23,7 +23,6 @@ class LogisticRegression:
 
 	def fit(self, X, y, steps, lr=0.001):
 		self.w = np.random.randn(1, X.shape[1])
-		delta = 999999
 		J = []
 		for i in range(steps):
 			h = self.h(X, self.w)
