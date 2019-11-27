@@ -54,14 +54,27 @@ class LogisticRegression:
 X, y = datasets.make_moons(n_samples = 1000, noise = 0.15)
 Xtest, ytest = datasets.make_moons(n_samples = 500, noise = 0.15)
 const = np.ones((1000,1))
-X = np.column_stack((X, X**3, X[:,0]+X[:,1], X[:,0]-X[:,1], \
-		X[:,0]*X[:,1], X**2, X[:,0]**2+X[:,1]**2, X[:,0]**2-X[:,1]**2,X[:,0]**3+X[:,1]**3,\
-		X[:,0]**3-X[:,1]**3))
+X = np.column_stack((X,\
+		     X**2,\
+		     X**3,\
+		     X[:,0]+X[:,1],\
+		     X[:,0]-X[:,1],\
+		     X[:,0]*X[:,1],\
+		     X[:,0]**2+X[:,1]**2,\
+		     X[:,0]**2-X[:,1]**2,\
+		     X[:,0]**3+X[:,1]**3,\
+		     X[:,0]**3-X[:,1]**3))
 
-Xtest = np.column_stack((Xtest, Xtest**3, Xtest[:,0]+Xtest[:,1], Xtest[:,0]-Xtest[:,1], \
-							Xtest[:,0]*Xtest[:,1], Xtest**2, Xtest[:,0]**2+Xtest[:,1]**2,\
-							Xtest[:,0]**2-Xtest[:,1]**2,Xtest[:,0]**3+Xtest[:,1]**3,\
-							Xtest[:,0]**3-Xtest[:,1]**3))
+Xtest = np.column_stack((Xtest,\
+			 Xtest**2,\
+			 Xtest**3,\
+			 Xtest[:,0]+Xtest[:,1],\
+			 Xtest[:,0]-Xtest[:,1],\
+			 Xtest[:,0]*Xtest[:,1],\
+			 Xtest[:,0]**2+Xtest[:,1]**2,\
+			 Xtest[:,0]**2-Xtest[:,1]**2,\
+			 Xtest[:,0]**3+Xtest[:,1]**3,\
+			 Xtest[:,0]**3-Xtest[:,1]**3))
 
 y = y.reshape(len(y),1)
 col = ['red', 'blue']
